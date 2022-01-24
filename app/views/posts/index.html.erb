@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>文章列表</h1>
+<%= Post.public_count %> 文章数量
+<div id="posts">
+  <% @posts.each do |post| %>
+    <h3>
+        <%= link_to post.title, post%>    
+      </h3>
+      <p>
+        <%= time_tag post.created_at, "data-local": "time-ago" %>
+      </p>  
+      <p>
+        <%= post.content %>
+      </p>
+    <p>
+      <%= link_to "查看详细内容", post %>
+    </p>
+  <% end %>
+
+</div>
+<div>
+<%= link_to "发布新文章", new_post_path %>
+</div>

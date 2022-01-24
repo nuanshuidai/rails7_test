@@ -1,0 +1,17 @@
+<%= turbo_stream_from @post%>
+<p style="color: green"><%= notice %></p>
+<div>
+<%= render @post %>
+</div>
+<div>
+  <%= link_to "修改这篇文章", edit_post_path(@post) %> |
+  <%= link_to "返回文章列表", posts_path %> |
+  <%= time_tag @post.created_at, "data-local": "time-ago" %> 
+  <%= button_to "删除这篇文章", @post, method: :delete %>
+</div>
+
+<div>  
+  <%=render "posts/comments",post: @post %>
+</div>
+
+

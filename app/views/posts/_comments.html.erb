@@ -1,0 +1,6 @@
+<div id="comments">
+  <h4>评论（<%= post.comments.public_count %>）<hr></h4>
+  <%= render post.comments %>  
+</div>
+<h4>回复</h4>
+<%= render "comments/new",post: post%>

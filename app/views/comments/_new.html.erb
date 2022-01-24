@@ -1,0 +1,21 @@
+<%= form_with model: [post,Comment.new] do |form| %>
+<%#= form_with model: comment. do |form| %>
+
+    <p>
+      <%= form.label  :评论人 %><br>
+      <%= form.text_field :commenter %>
+    </p>
+    <p>
+      <%= form.label  :内容 %><br>
+      <%= form.text_field :body %>
+    </p>
+
+    <div>
+      <%= form.label :状态%><br>
+      <%= form.select :status,['public','private','archived'],selected: 'public' %>
+    </div> 
+
+    <p>
+      <%= form.submit options="提交"%><br>
+    </p>
+<% end %>

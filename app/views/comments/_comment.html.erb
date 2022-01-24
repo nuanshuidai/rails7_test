@@ -1,0 +1,29 @@
+<div id="<%= dom_id(comment)%>">
+
+  <%# post.comments.each do |comment| %>
+    <% unless comment.archived?%>
+      
+        <p>评论人：<%= comment.commenter%> </p>
+          
+        <p>内容：      
+          <%= comment.body %>
+        </p>   
+        <p>
+          <%= time_tag comment.created_at, "data-local": "time-ago" %>
+        </p>
+      
+      <%= link_to "删除评论",[comment.post,comment],data:{
+        turbo_method: :delete,
+        turbo_confirm: "确定要删除吗？"
+    }%>
+    <% end %>
+    <hr>   
+  <%# end %>
+</div>
+
+
+
+
+
+
+
